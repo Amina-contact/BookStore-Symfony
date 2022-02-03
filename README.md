@@ -11,6 +11,7 @@ Utilisation des Fixtures de Doctrine pour ajouter des données de test(généré
   ● Lister les livres dont la date de parution est comprise entre deux années données.<br>
   ● Lister tous les genres et ajouter,supprimer,modifier un genre.<br>
   ● Lister tous les auteurs et ajouter,modifier,supprimer un auteur.<br>
+  # 
   ![livreListe](https://user-images.githubusercontent.com/98979712/152445913-87d589ca-a5a1-4cbd-a6ad-af7f8f22ff3a.PNG)
  # Ajouter un livre
   ![newbook](https://user-images.githubusercontent.com/98979712/152446084-92cca3a0-c9de-48f8-a411-c1713c3268f7.PNG)
