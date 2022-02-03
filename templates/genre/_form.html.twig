@@ -1,0 +1,18 @@
+
+<div form class='form-horizontal' >
+    {{ form_start(form) }}
+        <div class='form-group row'>
+            <div class='col-md-3' style="width:50%">
+                  {{ form_row(form.nom)}}
+            </div>
+        </div>
+        {# {{ form_row(form.auteurs)}} #}
+        {{ form_row(form.livres, {
+         'attr': {
+            'class': "multi-select"
+         }
+        })}}
+        <button class="btn btn-dark"><i class="bi bi-save2"></i>{{ button_label|default(' Save') }}</button>
+         {{ form_end(form) }}
+</div>
+

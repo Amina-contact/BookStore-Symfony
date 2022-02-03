@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livre{% endblock %}
+
+{% block body %}
+<div class="container mt-1 col-md-8 col-md-offset-3">
+        <div class="card text-center">
+                <div class="card-header text-white bg-dark mb-1">
+                        <h2>Livre Details</h2>
+                </div>
+                <div class="card-body ">
+                    <div class="row justify-content-center" style="display: flex;justify-content: center;">
+                           <h3>Titre : {{ livre.titre }}</h3>
+                            <div class="col-1 col-md-2 mb-2">ID :  {{ livre.id }}</div>
+                            <!-- Force next columns to break to new line -->
+                            <div class="w-100"></div>
+                                    
+                            <div class="col-3 col-md-6 mb-2">Isbn : {{ livre.isbn }}</div>
+                            <div class="w-100"></div>
+                                
+                            <div class="col-2 col-md-5 mb-2">Nombre_pages : {{ livre.nombrePages }}</div>
+                            <div class="w-100"></div>
+
+                            <div class="col-3 col-md-6 mb-2">Date_de_parution : {{ livre.dateDeParution ? livre.dateDeParution|date('Y-m-d') : '' }}</div>
+                            <div class="w-100"></div>
+
+                            <div class="col-2 col-md-4 mb-2">Note : {{ livre.note }}</div>
+                            <div  class="d-flex">
+                                <div  class="p-2" style="background-color:white;width: 240px;margin-left:60px">
+                                <h5>Les auteurs</h5>
+                                {% for auteur in auteurs %}
+                                <ul>
+                                    <li>{{ auteur.nomPrenom }}</li>
+                                </ul> 
+                                {% else %}
+                                        <ol>no records found</ol>
+                                {% endfor %}
+                                </div>
+                                <div class="ml-auto p-2" style="background-color:white; justify-content: right;width: 240px;margin-left:100px">
+                                <h5>Les genres</h5>
+                                {% for genre in genres %}
+                                    <ul>
+                                        <li>{{ genre.nom }}</li>
+                                    </ul> 
+                                {% else %}
+                                        <ol>no records found</ol>
+                                {% endfor %}
+                                </div>
+                            </div>
+                </div>
+        </div>
+        <div class="card-footer text-muted text-white bg-dark">
+           <div style=" display: flex;justify-content: center;">
+                    {% if is_granted('ROLE_ADMIN') %}
+							 <a href="{{ path('livre_edit', {'id': livre.id}) }}" class="btn btn-success" style="margin-right:10px"><i class="bi bi-pencil-square"></i> Modifier</a>   {{ include('livre/_delete_form.html.twig') }} 
+					{% endif %}
+            </div>
+                               
+        </div>
+</div>
+            <div class="row mt-2 mb-2">
+                <div  style="display: flex;justify-content: center;">
+                    <a href="{{ path('livre_index') }}" class="btn btn-primary"><i class="bi bi-arrow-left-circle"></i> Retour à la liste des livres</a>
+                </div>
+            </div>
+{% endblock %}

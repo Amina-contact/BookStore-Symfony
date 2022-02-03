@@ -1,0 +1,37 @@
+<div form class='form-horizontal' >
+    {{ form_start(form) }}
+        <div class='form-group row'>
+                <div class='col-md-3'  style="width:50%">
+                  {{ form_row(form.isbn)}}
+                </div>
+                <div class='col-md-3' style="width:50%">
+                  {{ form_row(form.titre)}}
+                </div>
+        </div>
+        <div class='form-group row'>
+            <div class='col-md-3' style="width:50%">  
+              {{ form_row(form.nombre_pages)}}
+            </div>
+            <div class='col-md-3' style="width:50%">
+                  {{ form_row(form.note)}}
+            </div>
+        </div>
+        {{ form_row(form.date_de_parution, {
+         'attr': {
+            'class': "date"
+         }
+        })}}
+        {# {{ form_row(form.auteurs)}} #}
+        {{ form_row(form.auteurs, {
+         'attr': {
+            'class': "multi-select"
+         }
+        })}}
+        {{ form_row(form.genres, {
+         'attr': {
+            'class': "multi-select"
+         }
+        })}}
+        <button class="btn btn-dark"><i class="bi bi-save2"></i>{{ button_label|default(' Save') }}</button>
+         {{ form_end(form) }}
+</div>

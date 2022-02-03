@@ -1,0 +1,9 @@
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-left: 320px;
+    border:black solid;
+    
+}

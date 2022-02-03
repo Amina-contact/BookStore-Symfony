@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+{% endblock %}
+{% block title %}New Livre{% endblock %}
+{% block body %}
+<div class="col-md-6 offset-md-3 mt-2">
+    <div class="card">
+              <div class="card-header text-white bg-dark mb-3">Ajouter un nouveau Livre</div>
+              <div class="card-body">
+                {{ include('livre/_form.html.twig') }}
+              </div>
+    </div>
+                  <div class="row mt-1">
+                          <div class="col-md-6 offset-md-3">
+                              <a href="{{ path('livre_index') }}" class="btn btn-primary"><i class="bi bi-arrow-left-circle"></i> Retour à la liste des livres</a>
+                          </div>
+                 </div>
+</div>
+    {% block javascripts %}
+         <script>
+             $(".multi-select").select2({
+                maximumSelectionLength: 6
+            });
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+   {% endblock %}
+{% endblock %}
