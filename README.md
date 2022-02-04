@@ -1,6 +1,7 @@
 # BookStore
 Est une application Symfony 5.4 qui est appelée bookstore.
 Cette application gére quatre entités :Auteur,Livre,Genre et User.
+La vidéo de démonstration : https://youtu.be/yyL_q_nafkY
 # Contraintes techniques :
 Toutes les opérations d’ajout, de modification et de suppression ne peuvent se faire que par
 un utilisateur authentifié et ayant le rôle "ROLE_ADMIN". Les utilisateurs anonymes auront
